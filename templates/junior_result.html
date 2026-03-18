@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card result-card">
+    <h2>🎉 Тест для 1-5 класса завершен!</h2>
+    
+    <div class="result-section">
+        <h3>Ваша рекомендуемая профессия:</h3>
+        <div class="profession-box">
+            {{ profession_description|safe }}
+        </div>
+        
+        <h3>📊 ТОП-3 профессии для вас:</h3>
+        <ul class="top-list">
+            {% for prof in top_professions %}
+            <li>{{ prof }}</li>
+            {% endfor %}
+        </ul>
+        
+        <h3>💡 Совет:</h3>
+        <ul class="advice-list">
+            {% for tip in advice %}
+            <li>{{ tip }}</li>
+            {% endfor %}
+        </ul>
+        
+        <h3>📚 Ресурсы для обучения:</h3>
+        <p>{{ resources }}</p>
+    </div>
+    
+    <div class="button-group">
+        <a href="{{ url_for('progress') }}" class="btn">📊 Мой прогресс</a>
+        <a href="{{ url_for('index') }}" class="btn">🔙 В меню</a>
+    </div>
+</div>
+{% endblock %} 

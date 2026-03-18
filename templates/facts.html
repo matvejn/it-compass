@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card fact-card">
+    <h2>🔍 Интересный факт об IT</h2>
+    
+    <div class="fact-content">
+        {{ fact }}
+    </div>
+    
+    <div class="button-group">
+        <a href="{{ url_for('facts') }}" class="btn">🔄 Ещё факт</a>
+        <a href="{{ url_for('index') }}" class="btn">🔙 В меню</a>
+    </div>
+</div>
+{% endblock %}

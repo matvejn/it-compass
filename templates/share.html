@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card share-card">
+    <h2>📤 Поделиться с друзьями</h2>
+    
+    <div class="share-section">
+        <p>1. Отправь другу ссылку на сайт:</p>
+        <div class="url-box">
+            <code>http://127.0.0.1:5000</code>
+        </div>
+        
+        <p>2. Или скопируй этот текст:</p>
+        <div class="text-box">
+            <textarea readonly rows="3">Я прохожу тест на выбор IT-профессии! Присоединяйся! 🚀</textarea>
+        </div>
+        
+        <p class="hint"><i>Пригласи друзей и сравнивайте результаты!</i></p>
+    </div>
+    
+    <a href="{{ url_for('index') }}" class="btn">🔙 В меню</a>
+</div>
+{% endblock %}

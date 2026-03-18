@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card result-card">
+    <h2>{{ result_text|safe }}</h2>
+    
+    <div class="explanation">
+        <i>{{ explanation }}</i>
+    </div>
+    
+    <div class="button-group">
+        <a href="{{ url_for('game') }}" class="btn">🎮 Ещё вопрос</a>
+        <a href="{{ url_for('index') }}" class="btn">🔙 В меню</a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card">
+    <h2>📚 {{ category }}</h2>
+    
+    <div class="terms-list">
+        {% for term, definition in terms %}
+        <div class="term-item">
+            <h3>{{ term }}</h3>
+            <p>{{ definition }}</p>
+        </div>
+        {% endfor %}
+    </div>
+    
+    <div class="button-group">
+        <a href="{{ url_for('terms') }}" class="btn">📚 К категориям</a>
+        <a href="{{ url_for('index') }}" class="btn">🔙 В меню</a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card game-card">
+    <h2>🎮 Угадай профессию!</h2>
+    
+    <div class="game-question">
+        {{ description }}
+    </div>
+    
+    <form action="{{ url_for('game_answer') }}" method="post" class="game-form">
+        {% for i, option in enumerate(options) %}
+        <button type="submit" name="answer" value="{{ i }}" class="game-option">
+            {{ option }}
+        </button>
+        {% endfor %}
+    </form>
+    
+    <a href="{{ url_for('index') }}" class="btn">🔙 В меню</a>
+</div>
+{% endblock %}

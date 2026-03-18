@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card">
+    <h2>📊 Мой прогресс</h2>
+    
+    {% if progress %}
+    <div class="progress-section">
+        <h3>Ваш профиль способностей:</h3>
+        
+        <div class="skills-list">
+            <div class="skill-item">
+                <span class="skill-name">Креативность:</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: {{ progress.get('creativity', 0) * 10 }}%"></div>
+                </div>
+                <span class="skill-value">{{ progress.get('creativity', 0) * 10 }}%</span>
+            </div>
+            
+            <div class="skill-item">
+                <span class="skill-name">Логика:</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: {{ progress.get('logic', 0) * 10 }}%"></div>
+                </div>
+                <span class="skill-value">{{ progress.get('logic', 0) * 10 }}%</span>
+            </div>
+            
+            <div class="skill-item">
+                <span class="skill-name">Командная работа:</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: {{ progress.get('teamwork', 0) * 10 }}%"></div>
+                </div>
+                <span class="skill-value">{{ progress.get('teamwork', 0) * 10 }}%</span>
+            </div>
+            
+            <div class="skill-item">
+                <span class="skill-name">Внимательность:</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: {{ progress.get('attention', 0) * 10 }}%"></div>
+                </div>
+                <span class="skill-value">{{ progress.get('attention', 0) * 10 }}%</span>
+            </div>
+            
+            <div class="skill-item">
+                <span class="skill-name">Усидчивость:</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: {{ progress.get('patience', 0) * 10 }}%"></div>
+                </div>
+                <span class="skill-value">{{ progress.get('patience', 0) * 10 }}%</span>
+            </div>
+        </div>
+        
+        {% if progress.history %}
+        <h3>📋 История тестов:</h3>
+        <ul class="history-list">
+            {% for test in progress.history[-5:] %}
+            <li>{{ test }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        
+        <h3>📊 Статистика:</h3>
+        <ul class="stats-list">
+            <li>Пройдено тестов: {{ stats.get('tests_completed', 0) }}</li>
+            <li>Сыграно игр: {{ stats.get('games_played', 0) }}</li>
+            <li>Впервые в боте: {{ stats.get('first_visit', 'неизвестно') }}</li>
+        </ul>
+    </div>
+    {% else %}
+    <p>Пока нет данных. Пройдите тест, чтобы увидеть свой прогресс!</p>
+    {% endif %}
+    
+    <a href="{{ url_for('index') }}" class="btn">🔙 В меню</a>
+</div>
+{% endblock %}

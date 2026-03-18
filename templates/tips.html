@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card tip-card">
+    <h2>💡 Полезный совет</h2>
+    
+    <div class="tip-content">
+        {{ tip|safe }}
+    </div>
+    
+    <div class="button-group">
+        <a href="{{ url_for('tips') }}" class="btn">🔄 Ещё совет</a>
+        <a href="{{ url_for('index') }}" class="btn">🔙 В меню</a>
+    </div>
+</div>
+{% endblock %}

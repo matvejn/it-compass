@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card test-card">
+    <h2>🎓 Тест для 6-11 класса</h2>
+    <div class="question-counter">Вопрос {{ q_num }} из {{ total }}</div>
+    
+    <div class="question-text">{{ question.text }}</div>
+    
+    <form method="post" class="test-form">
+        {% for option in question.options %}
+        <button type="submit" name="answer" value="{{ option.value }}"
+                class="test-option {% if answers.get('q' ~ q_num) == option.value %}selected{% endif %}">
+            {{ option.text }}
+        </button>
+        {% endfor %}
+    </form>
+    
+    <div class="test-navigation">
+        {% if q_num > 1 %}
+        <a href="{{ url_for('senior_test_question', q_num=q_num-1) }}" class="nav-btn">← Назад</a>
+        {% endif %}
+        <a href="{{ url_for('index') }}" class="exit-btn">🔙 Выйти из теста</a>
+    </div>
+</div>
+{% endblock %}

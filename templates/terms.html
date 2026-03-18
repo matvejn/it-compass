@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card">
+    <h2>📚 IT-словарик</h2>
+    
+    <p>Выбери категорию:</p>
+    
+    <div class="categories-grid">
+        {% for category in categories %}
+        <a href="{{ url_for('terms_category', category=category) }}" class="category-card">
+            {{ category }}
+        </a>
+        {% endfor %}
+    </div>
+    
+    <a href="{{ url_for('index') }}" class="btn">🔙 В меню</a>
+</div>
+{% endblock %}

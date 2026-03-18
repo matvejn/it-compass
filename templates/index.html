@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="welcome-card">
+    <h2>👋 Привет!</h2>
+    <p>Я помогу тебе выбрать IT-профессию будущего!</p>
+</div>
+
+<div class="menu-grid">
+    <a href="{{ url_for('junior_test_start') }}" class="menu-card">
+        <div class="menu-icon">📚</div>
+        <h3>Тест 1-5 класс</h3>
+        <p>Для младших школьников</p>
+    </a>
+    
+    <a href="{{ url_for('senior_test_start') }}" class="menu-card">
+        <div class="menu-icon">🎓</div>
+        <h3>Тест 6-11 класс</h3>
+        <p>Для старших классов</p>
+    </a>
+    
+    <a href="{{ url_for('facts') }}" class="menu-card">
+        <div class="menu-icon">🔍</div>
+        <h3>Интересные факты</h3>
+        <p>50+ фактов об IT</p>
+    </a>
+    
+    <a href="{{ url_for('terms') }}" class="menu-card">
+        <div class="menu-icon">📚</div>
+        <h3>IT-словарик</h3>
+        <p>50+ терминов</p>
+    </a>
+    
+    <a href="{{ url_for('progress') }}" class="menu-card">
+        <div class="menu-icon">📊</div>
+        <h3>Мой прогресс</h3>
+        <p>Твои результаты</p>
+    </a>
+    
+    <a href="{{ url_for('game') }}" class="menu-card">
+        <div class="menu-icon">🎮</div>
+        <h3>Угадай профессию</h3>
+        <p>Игра с 50+ профессиями</p>
+    </a>
+    
+    <a href="{{ url_for('tips') }}" class="menu-card">
+        <div class="menu-icon">💡</div>
+        <h3>Советы</h3>
+        <p>50+ полезных советов</p>
+    </a>
+    
+    <a href="{{ url_for('share') }}" class="menu-card">
+        <div class="menu-icon">📤</div>
+        <h3>Поделиться</h3>
+        <p>Пригласи друзей</p>
+    </a>
+    
+    <a href="{{ url_for('about') }}" class="menu-card">
+        <div class="menu-icon">ℹ️</div>
+        <h3>О боте</h3>
+        <p>Информация о проекте</p>
+    </a>
+    
+    <a href="{{ url_for('creator') }}" class="menu-card">
+        <div class="menu-icon">👨‍💻</div>
+        <h3>Создатель</h3>
+        <p>Об авторе</p>
+    </a>
+</div>
+{% endblock %}

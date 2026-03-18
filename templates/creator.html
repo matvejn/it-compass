@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card">
+    <h2>👨‍💻 Создатель бота</h2>
+    
+    <div class="creator-card">
+        <div class="creator-avatar">👨‍💻</div>
+        <div class="creator-info">
+            <p class="creator-name">@Matv1505</p>
+            <p class="creator-class">ученик 6г класса</p>
+        </div>
+    </div>
+    
+    <div class="info-section">
+        <h3>🌟 О себе:</h3>
+        <p>Увлекаюсь программированием и создал этого бота, чтобы помочь другим школьникам выбрать свой путь в IT!</p>
+        
+        <h3>📚 Класс:</h3>
+        <p>6г</p>
+        
+        <h3>💻 Язык:</h3>
+        <p>Python (Flask)</p>
+        
+        <h3>📅 Версия бота:</h3>
+        <p>5.0 (веб-версия!)</p>
+        
+        <h3>🚀 Что нового:</h3>
+        <ul class="features-list">
+            <li>📚 15 вопросов в каждом тесте</li>
+            <li>🔍 50+ интересных фактов</li>
+            <li>📚 50+ слов в IT-словарике</li>
+            <li>🎮 50+ профессий в игре</li>
+            <li>💡 50+ полезных советов</li>
+            <li>🌐 Красивый веб-интерфейс</li>
+        </ul>
+        
+        <p class="highlight">По всем вопросам пиши в Telegram! 📱</p>
+    </div>
+    
+    <a href="{{ url_for('index') }}" class="btn">🔙 В меню</a>
+</div>
+{% endblock %}
